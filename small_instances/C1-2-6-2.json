@@ -1,0 +1,669 @@
+{
+    "n_drivers": 2,
+    "n_requests": 6,
+    "n_yards": 1,
+    "n_configs": 6,
+    "params": {
+        "cost_driving_km": 1.5,
+        "cost_driver_min": 0.5,
+        "distance_factor": 1.0,
+        "average_speed_km_h": 60.0,
+        "time_horizon": 1440.0,
+        "max_work_duration_min": 900.0,
+        "max_work_duration_reduced_min": 720.0,
+        "reduced_time_boundary": 300.0,
+        "yard_changeover_time_min": 30.0,
+        "max_yard_visits_per_driver": 3,
+        "distanceCalculationMethod": "Haversine"
+    },
+    "assets": [
+        {
+            "idx": 0,
+            "name": "SB.sb1.empt",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 1,
+            "name": "SB.sb1.full",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 2,
+            "name": "Truck",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 3,
+            "name": "Hangr",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        }
+    ],
+    "configurations": [
+        {
+            "idx": 0,
+            "name": "Truck<SB.sb1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 1,
+            "name": "Truck<SB.sb1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 2,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 3,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 4,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 5,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        }
+    ],
+    "drivers": [
+        {
+            "idx": 0,
+            "name": "driver_0",
+            "start_configuration_idx": 2,
+            "sleeps_on_road": true,
+            "earliest_start_time": 75.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.18885576,
+                0.29559584
+            ],
+            "coordinates_end": [
+                -0.00290932,
+                -0.33098207
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 1,
+            "name": "driver_1",
+            "start_configuration_idx": 2,
+            "sleeps_on_road": false,
+            "earliest_start_time": 254.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.25290634,
+                -0.09739607
+            ],
+            "coordinates_end": [
+                -0.20405779,
+                0.10763825
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        }
+    ],
+    "nodes": [
+        {
+            "idx": 0,
+            "name": "cust_0",
+            "order_number": 0,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 52.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.26709758,
+                0.14710728
+            ],
+            "time_window": [
+                623.4166312816947,
+                740.4166312816947
+            ]
+        },
+        {
+            "idx": 1,
+            "name": "cust_1",
+            "order_number": 0,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 19.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.04209369,
+                0.20428646
+            ],
+            "time_window": [
+                982.5446291986394,
+                1235.5446291986395
+            ]
+        },
+        {
+            "idx": 2,
+            "name": "cust_2",
+            "order_number": 1,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 27.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.19100375,
+                0.33047559
+            ],
+            "time_window": [
+                634.1907283085775,
+                705.1907283085775
+            ]
+        },
+        {
+            "idx": 3,
+            "name": "cust_3",
+            "order_number": 1,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 32.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.02211861,
+                -0.21231273
+            ],
+            "time_window": [
+                1033.8998261107026,
+                1440.0
+            ]
+        },
+        {
+            "idx": 4,
+            "name": "cust_4",
+            "order_number": 2,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 31.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.20911187,
+                -0.27720803
+            ],
+            "time_window": [
+                581.9904095085959,
+                819.9904095085959
+            ]
+        },
+        {
+            "idx": 5,
+            "name": "cust_5",
+            "order_number": 2,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 41.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.30900559,
+                -0.36034154
+            ],
+            "time_window": [
+                1085.8126651220764,
+                1224.8126651220764
+            ]
+        },
+        {
+            "idx": 6,
+            "name": "cust_6",
+            "order_number": 3,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 35.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.01666213,
+                -0.40562812
+            ],
+            "time_window": [
+                530.69591236082,
+                747.69591236082
+            ]
+        },
+        {
+            "idx": 7,
+            "name": "cust_7",
+            "order_number": 3,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 43.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.23579246,
+                0.45135296
+            ],
+            "time_window": [
+                869.9338216619267,
+                1083.9338216619267
+            ]
+        },
+        {
+            "idx": 8,
+            "name": "cust_8_loaded_end_pick",
+            "order_number": 4,
+            "customer_type": 6,
+            "event_type": "LLD",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 54.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.00738319,
+                -0.30148691
+            ],
+            "time_window": [
+                234.77755022380072,
+                665.7775502238007
+            ]
+        },
+        {
+            "idx": 9,
+            "name": "cust_9_loaded_end_del",
+            "order_number": 4,
+            "customer_type": 7,
+            "event_type": "DRL",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.35387938,
+                -0.48220599
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 10,
+            "name": "cust_10",
+            "order_number": 5,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 40.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.19133374,
+                -0.38263344
+            ],
+            "time_window": [
+                361.3238188560843,
+                737.3238188560842
+            ]
+        },
+        {
+            "idx": 11,
+            "name": "cust_11",
+            "order_number": 5,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 15.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.21679228,
+                0.37170934
+            ],
+            "time_window": [
+                484.8504980780559,
+                883.8504980780559
+            ]
+        }
+    ],
+    "yards": [
+        {
+            "idx": 0,
+            "name": "yard_0",
+            "coordinates": [
+                -0.19179803,
+                0.19684162
+            ]
+        }
+    ],
+    "configurations_graph": {
+        "4,0": [
+            1
+        ],
+        "4,2": [
+            4,
+            3
+        ],
+        "4,3": [
+            5
+        ],
+        "4,4": [
+            5
+        ],
+        "5,1": [
+            0
+        ],
+        "5,3": [
+            2
+        ],
+        "5,4": [
+            2
+        ],
+        "5,5": [
+            3,
+            4
+        ],
+        "6,0": [
+            1
+        ],
+        "6,2": [
+            4,
+            3
+        ],
+        "6,3": [
+            5
+        ],
+        "6,4": [
+            5
+        ],
+        "7,1": [
+            0
+        ],
+        "7,3": [
+            2
+        ],
+        "7,4": [
+            2
+        ],
+        "7,5": [
+            3,
+            4
+        ],
+        "8,0": [
+            1
+        ],
+        "8,2": [
+            4,
+            3
+        ],
+        "8,3": [
+            5
+        ],
+        "8,4": [
+            5
+        ],
+        "9,1": [
+            0
+        ],
+        "9,3": [
+            2
+        ],
+        "9,4": [
+            2
+        ],
+        "9,5": [
+            3,
+            4
+        ],
+        "10,0": [
+            1
+        ],
+        "10,2": [
+            4,
+            3
+        ],
+        "10,3": [
+            5
+        ],
+        "10,4": [
+            5
+        ],
+        "11,1": [
+            0
+        ],
+        "11,3": [
+            2
+        ],
+        "11,4": [
+            2
+        ],
+        "11,5": [
+            3,
+            4
+        ],
+        "12,2": [
+            5
+        ],
+        "13,5": [
+            2
+        ],
+        "14,0": [
+            1
+        ],
+        "14,2": [
+            4,
+            3
+        ],
+        "14,3": [
+            5
+        ],
+        "14,4": [
+            5
+        ],
+        "15,1": [
+            0
+        ],
+        "15,3": [
+            2
+        ],
+        "15,4": [
+            2
+        ],
+        "15,5": [
+            3,
+            4
+        ]
+    },
+    "search_for_empty": [
+        "empt"
+    ],
+    "search_for_full": [
+        "full"
+    ],
+    "z_requirements_config_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_config": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ]
+}

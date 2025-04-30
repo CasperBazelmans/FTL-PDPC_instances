@@ -1,0 +1,1709 @@
+{
+    "n_drivers": 6,
+    "n_requests": 16,
+    "n_yards": 1,
+    "n_configs": 6,
+    "params": {
+        "cost_driving_km": 1.5,
+        "cost_driver_min": 0.5,
+        "distance_factor": 1.0,
+        "average_speed_km_h": 60.0,
+        "time_horizon": 1440.0,
+        "max_work_duration_min": 900.0,
+        "max_work_duration_reduced_min": 720.0,
+        "reduced_time_boundary": 300.0,
+        "yard_changeover_time_min": 30.0,
+        "max_yard_visits_per_driver": 3,
+        "distanceCalculationMethod": "Haversine"
+    },
+    "assets": [
+        {
+            "idx": 0,
+            "name": "SB.sb1.empt",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 1,
+            "name": "SB.sb1.full",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 2,
+            "name": "Truck",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 3,
+            "name": "Hangr",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        }
+    ],
+    "configurations": [
+        {
+            "idx": 0,
+            "name": "Truck<SB.sb1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 1,
+            "name": "Truck<SB.sb1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 2,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 3,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 4,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 5,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        }
+    ],
+    "drivers": [
+        {
+            "idx": 0,
+            "name": "driver_0",
+            "start_configuration_idx": 2,
+            "sleeps_on_road": true,
+            "earliest_start_time": 27.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.17166734,
+                -0.04480132
+            ],
+            "coordinates_end": [
+                -0.13570203,
+                0.12735084
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 1,
+            "name": "driver_1",
+            "start_configuration_idx": 0,
+            "sleeps_on_road": true,
+            "earliest_start_time": 210.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.25589824,
+                0.25023204
+            ],
+            "coordinates_end": [
+                0.27504006,
+                -0.40589793
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 2,
+            "name": "driver_2",
+            "start_configuration_idx": 2,
+            "sleeps_on_road": true,
+            "earliest_start_time": 115.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.09700179,
+                -0.1444949
+            ],
+            "coordinates_end": [
+                0.11788269,
+                -0.0317419
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 3,
+            "name": "driver_3",
+            "start_configuration_idx": 2,
+            "sleeps_on_road": false,
+            "earliest_start_time": 189.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.34388743,
+                -0.40717892
+            ],
+            "coordinates_end": [
+                0.40266876,
+                0.04258477
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 4,
+            "name": "driver_4",
+            "start_configuration_idx": 0,
+            "sleeps_on_road": false,
+            "earliest_start_time": 284.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.32783371,
+                -0.35158222
+            ],
+            "coordinates_end": [
+                -0.2399688,
+                -0.27137087
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 5,
+            "name": "driver_5",
+            "start_configuration_idx": 0,
+            "sleeps_on_road": false,
+            "earliest_start_time": 11.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.4038574,
+                -0.46737181
+            ],
+            "coordinates_end": [
+                0.40314042,
+                -0.46384393
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        }
+    ],
+    "nodes": [
+        {
+            "idx": 0,
+            "name": "cust_0",
+            "order_number": 0,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 16.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.11614428,
+                0.18509728
+            ],
+            "time_window": [
+                698.4832795587391,
+                911.4832795587391
+            ]
+        },
+        {
+            "idx": 1,
+            "name": "cust_1",
+            "order_number": 0,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 51.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.4496531,
+                0.45383193
+            ],
+            "time_window": [
+                1201.7869078586414,
+                1440.0
+            ]
+        },
+        {
+            "idx": 2,
+            "name": "cust_2",
+            "order_number": 1,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 35.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.16061346,
+                0.11316624
+            ],
+            "time_window": [
+                718.4315564001738,
+                831.4315564001738
+            ]
+        },
+        {
+            "idx": 3,
+            "name": "cust_3",
+            "order_number": 1,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 50.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.05591825,
+                -0.31906927
+            ],
+            "time_window": [
+                1270.5409616691852,
+                1338.5409616691852
+            ]
+        },
+        {
+            "idx": 4,
+            "name": "cust_4",
+            "order_number": 2,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 35.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.24998568,
+                0.39949716
+            ],
+            "time_window": [
+                190.9473653052701,
+                253.9473653052701
+            ]
+        },
+        {
+            "idx": 5,
+            "name": "cust_5",
+            "order_number": 2,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 59.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.06058847,
+                -0.35959846
+            ],
+            "time_window": [
+                542.9989681760561,
+                756.9989681760561
+            ]
+        },
+        {
+            "idx": 6,
+            "name": "cust_6",
+            "order_number": 3,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 35.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.07936008,
+                -0.36613559
+            ],
+            "time_window": [
+                259.68560740070143,
+                578.6856074007014
+            ]
+        },
+        {
+            "idx": 7,
+            "name": "cust_7",
+            "order_number": 3,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 41.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.27954886,
+                0.3692302
+            ],
+            "time_window": [
+                1000.1310438261029,
+                1202.131043826103
+            ]
+        },
+        {
+            "idx": 8,
+            "name": "cust_8_loaded_end_pick",
+            "order_number": 4,
+            "customer_type": 6,
+            "event_type": "LLD",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 42.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.45116422,
+                0.11294621
+            ],
+            "time_window": [
+                705.5733381004313,
+                805.5733381004313
+            ]
+        },
+        {
+            "idx": 9,
+            "name": "cust_9_loaded_end_del",
+            "order_number": 4,
+            "customer_type": 7,
+            "event_type": "LUL",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.43462886,
+                0.41629499
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 10,
+            "name": "cust_10",
+            "order_number": 5,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 23.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.04220127,
+                0.23056998
+            ],
+            "time_window": [
+                703.6302060080039,
+                1171.6302060080038
+            ]
+        },
+        {
+            "idx": 11,
+            "name": "cust_11",
+            "order_number": 5,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 17.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.11148892,
+                -0.13260699
+            ],
+            "time_window": [
+                1156.5541551949705,
+                1368.5541551949705
+            ]
+        },
+        {
+            "idx": 12,
+            "name": "cust_12",
+            "order_number": 6,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 6,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 32.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.35697264,
+                -0.43090102
+            ],
+            "time_window": [
+                254.7895739409606,
+                698.7895739409606
+            ]
+        },
+        {
+            "idx": 13,
+            "name": "cust_13",
+            "order_number": 6,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 6,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 57.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.33749674,
+                -0.01964337
+            ],
+            "time_window": [
+                847.2260283804849,
+                1059.2260283804849
+            ]
+        },
+        {
+            "idx": 14,
+            "name": "cust_14",
+            "order_number": 7,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 7,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 39.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.22173066,
+                -0.25042161
+            ],
+            "time_window": [
+                366.70620704496156,
+                665.7062070449615
+            ]
+        },
+        {
+            "idx": 15,
+            "name": "cust_15",
+            "order_number": 7,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 7,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 37.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.22495976,
+                0.0740723
+            ],
+            "time_window": [
+                801.2570724293121,
+                971.2570724293121
+            ]
+        },
+        {
+            "idx": 16,
+            "name": "cust_16",
+            "order_number": 8,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 8,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 37.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.36276114,
+                0.2578375
+            ],
+            "time_window": [
+                299.38672729756496,
+                676.3867272975649
+            ]
+        },
+        {
+            "idx": 17,
+            "name": "cust_17",
+            "order_number": 8,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 8,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 57.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.36907011,
+                -0.43751183
+            ],
+            "time_window": [
+                435.35684475460687,
+                758.3568447546069
+            ]
+        },
+        {
+            "idx": 18,
+            "name": "cust_18",
+            "order_number": 9,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 9,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 17.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.07885964,
+                0.19852406
+            ],
+            "time_window": [
+                475.33360503111606,
+                696.3336050311161
+            ]
+        },
+        {
+            "idx": 19,
+            "name": "cust_19",
+            "order_number": 9,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 9,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 51.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.01174875,
+                -0.3493682
+            ],
+            "time_window": [
+                1137.10186311444,
+                1268.10186311444
+            ]
+        },
+        {
+            "idx": 20,
+            "name": "cust_20",
+            "order_number": 10,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 10,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 50.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.45838166,
+                -0.4207479
+            ],
+            "time_window": [
+                534.0953499765685,
+                887.0953499765685
+            ]
+        },
+        {
+            "idx": 21,
+            "name": "cust_21",
+            "order_number": 10,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 10,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 28.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.39257542,
+                -0.19754283
+            ],
+            "time_window": [
+                982.5517107544019,
+                1071.551710754402
+            ]
+        },
+        {
+            "idx": 22,
+            "name": "cust_22",
+            "order_number": 11,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 11,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 33.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.29137294,
+                0.06470861
+            ],
+            "time_window": [
+                484.2433497146431,
+                613.243349714643
+            ]
+        },
+        {
+            "idx": 23,
+            "name": "cust_23",
+            "order_number": 11,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 11,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 37.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.00867247,
+                -0.30563317
+            ],
+            "time_window": [
+                1296.6802750857444,
+                1403.6802750857444
+            ]
+        },
+        {
+            "idx": 24,
+            "name": "cust_24_tomorrow_pick",
+            "order_number": 12,
+            "customer_type": 8,
+            "event_type": "LLD",
+            "request_idx": 12,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.36068087,
+                -0.40874109
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 25,
+            "name": "cust_25_tomorrow_del",
+            "order_number": 12,
+            "customer_type": 9,
+            "event_type": "DRL",
+            "request_idx": 12,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.40385078,
+                -0.3798406
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 26,
+            "name": "cust_26",
+            "order_number": 13,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 13,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 15.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.0696957,
+                0.05269016
+            ],
+            "time_window": [
+                280.27064108635625,
+                677.2706410863562
+            ]
+        },
+        {
+            "idx": 27,
+            "name": "cust_27",
+            "order_number": 13,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 13,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 48.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.48674547,
+                -0.19064232
+            ],
+            "time_window": [
+                1153.0379615922634,
+                1242.0379615922634
+            ]
+        },
+        {
+            "idx": 28,
+            "name": "cust_28",
+            "order_number": 14,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 14,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 58.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.47566666,
+                0.22166966
+            ],
+            "time_window": [
+                384.942754177592,
+                633.942754177592
+            ]
+        },
+        {
+            "idx": 29,
+            "name": "cust_29",
+            "order_number": 14,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 14,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 52.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.176195,
+                -0.02922035
+            ],
+            "time_window": [
+                944.0075755851094,
+                1202.0075755851094
+            ]
+        },
+        {
+            "idx": 30,
+            "name": "cust_30",
+            "order_number": 15,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 15,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 38.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.1737269,
+                -0.34922196
+            ],
+            "time_window": [
+                591.4956259872667,
+                987.4956259872667
+            ]
+        },
+        {
+            "idx": 31,
+            "name": "cust_31",
+            "order_number": 15,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 15,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 31.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.11494998,
+                0.13492425
+            ],
+            "time_window": [
+                924.1920306996011,
+                989.1920306996011
+            ]
+        }
+    ],
+    "yards": [
+        {
+            "idx": 0,
+            "name": "yard_0",
+            "coordinates": [
+                -0.3889044,
+                -0.31577607
+            ]
+        }
+    ],
+    "configurations_graph": {
+        "12,2": [
+            5
+        ],
+        "13,5": [
+            2
+        ],
+        "14,0": [
+            1
+        ],
+        "14,2": [
+            4,
+            3
+        ],
+        "14,3": [
+            5
+        ],
+        "14,4": [
+            5
+        ],
+        "15,1": [
+            0
+        ],
+        "15,3": [
+            2
+        ],
+        "15,4": [
+            2
+        ],
+        "15,5": [
+            3,
+            4
+        ],
+        "16,2": [
+            5
+        ],
+        "17,5": [
+            2
+        ],
+        "18,0": [
+            1
+        ],
+        "18,2": [
+            4,
+            3
+        ],
+        "18,3": [
+            5
+        ],
+        "18,4": [
+            5
+        ],
+        "19,1": [
+            0
+        ],
+        "19,3": [
+            2
+        ],
+        "19,4": [
+            2
+        ],
+        "19,5": [
+            3,
+            4
+        ],
+        "20,0": [
+            1
+        ],
+        "20,2": [
+            4,
+            3
+        ],
+        "20,3": [
+            5
+        ],
+        "20,4": [
+            5
+        ],
+        "21,1": [
+            0
+        ],
+        "21,3": [
+            2
+        ],
+        "21,4": [
+            2
+        ],
+        "21,5": [
+            3,
+            4
+        ],
+        "22,0": [
+            1
+        ],
+        "22,2": [
+            4,
+            3
+        ],
+        "22,3": [
+            5
+        ],
+        "22,4": [
+            5
+        ],
+        "23,1": [
+            0
+        ],
+        "23,3": [
+            2
+        ],
+        "23,4": [
+            2
+        ],
+        "23,5": [
+            3,
+            4
+        ],
+        "24,0": [
+            1
+        ],
+        "24,2": [
+            4,
+            3
+        ],
+        "24,3": [
+            5
+        ],
+        "24,4": [
+            5
+        ],
+        "25,1": [
+            0
+        ],
+        "25,3": [
+            2
+        ],
+        "25,4": [
+            2
+        ],
+        "25,5": [
+            3,
+            4
+        ],
+        "26,0": [
+            1
+        ],
+        "26,2": [
+            4,
+            3
+        ],
+        "26,3": [
+            5
+        ],
+        "26,4": [
+            5
+        ],
+        "27,1": [
+            0
+        ],
+        "27,3": [
+            2
+        ],
+        "27,4": [
+            2
+        ],
+        "27,5": [
+            3,
+            4
+        ],
+        "28,0": [
+            1
+        ],
+        "28,2": [
+            4,
+            3
+        ],
+        "28,3": [
+            5
+        ],
+        "28,4": [
+            5
+        ],
+        "29,1": [
+            0
+        ],
+        "29,3": [
+            2
+        ],
+        "29,4": [
+            2
+        ],
+        "29,5": [
+            3,
+            4
+        ],
+        "30,0": [
+            1
+        ],
+        "30,2": [
+            4,
+            3
+        ],
+        "30,3": [
+            5
+        ],
+        "30,4": [
+            5
+        ],
+        "31,1": [
+            0
+        ],
+        "31,3": [
+            2
+        ],
+        "31,4": [
+            2
+        ],
+        "31,5": [
+            3,
+            4
+        ],
+        "32,0": [
+            1
+        ],
+        "32,2": [
+            4,
+            3
+        ],
+        "32,3": [
+            5
+        ],
+        "32,4": [
+            5
+        ],
+        "33,1": [
+            0
+        ],
+        "33,3": [
+            2
+        ],
+        "33,4": [
+            2
+        ],
+        "33,5": [
+            3,
+            4
+        ],
+        "34,0": [
+            1
+        ],
+        "34,2": [
+            4,
+            3
+        ],
+        "34,3": [
+            5
+        ],
+        "34,4": [
+            5
+        ],
+        "35,1": [
+            0
+        ],
+        "35,3": [
+            2
+        ],
+        "35,4": [
+            2
+        ],
+        "35,5": [
+            3,
+            4
+        ],
+        "36,2": [
+            5
+        ],
+        "37,5": [
+            2
+        ],
+        "38,0": [
+            1
+        ],
+        "38,2": [
+            4,
+            3
+        ],
+        "38,3": [
+            5
+        ],
+        "38,4": [
+            5
+        ],
+        "39,1": [
+            0
+        ],
+        "39,3": [
+            2
+        ],
+        "39,4": [
+            2
+        ],
+        "39,5": [
+            3,
+            4
+        ],
+        "40,0": [
+            1
+        ],
+        "40,2": [
+            4,
+            3
+        ],
+        "40,3": [
+            5
+        ],
+        "40,4": [
+            5
+        ],
+        "41,1": [
+            0
+        ],
+        "41,3": [
+            2
+        ],
+        "41,4": [
+            2
+        ],
+        "41,5": [
+            3,
+            4
+        ],
+        "42,0": [
+            1
+        ],
+        "42,2": [
+            4,
+            3
+        ],
+        "42,3": [
+            5
+        ],
+        "42,4": [
+            5
+        ],
+        "43,1": [
+            0
+        ],
+        "43,3": [
+            2
+        ],
+        "43,4": [
+            2
+        ],
+        "43,5": [
+            3,
+            4
+        ]
+    },
+    "search_for_empty": [
+        "empt"
+    ],
+    "search_for_full": [
+        "full"
+    ],
+    "z_requirements_config_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_config": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ]
+}
