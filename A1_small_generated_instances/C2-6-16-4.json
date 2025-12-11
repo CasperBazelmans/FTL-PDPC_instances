@@ -1,0 +1,2763 @@
+{
+    "n_drivers": 6,
+    "n_requests": 16,
+    "n_yards": 1,
+    "n_configs": 20,
+    "params": {
+        "cost_driving_km": 1.5,
+        "cost_driver_min": 0.5,
+        "distance_factor": 1.0,
+        "average_speed_km_h": 60.0,
+        "time_horizon": 1440.0,
+        "max_work_duration_min": 900.0,
+        "max_work_duration_reduced_min": 720.0,
+        "reduced_time_boundary": 300.0,
+        "yard_changeover_time_min": 30.0,
+        "max_yard_visits_per_driver": 3,
+        "distanceCalculationMethod": "Haversine"
+    },
+    "assets": [
+        {
+            "idx": 0,
+            "name": "TR.tr1.empt",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 1,
+            "name": "TR.tr1.full",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 2,
+            "name": "SB.sb1.empt",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 3,
+            "name": "SB.sb1.full",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 4,
+            "name": "Truck",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 5,
+            "name": "Hangr",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 6,
+            "name": "Dolly",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 7,
+            "name": "Tract",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 8,
+            "name": "Bdoub",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        }
+    ],
+    "configurations": [
+        {
+            "idx": 0,
+            "name": "Truck<SB.sb1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 1,
+            "name": "Truck<SB.sb1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 2,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 3,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 4,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 5,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 6,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 7,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 8,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 9,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 10,
+            "name": "Tract<TR.tr1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 11,
+            "name": "Tract<TR.tr1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 12,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 13,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 14,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 15,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 16,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 17,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 18,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 19,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.5
+        }
+    ],
+    "drivers": [
+        {
+            "idx": 0,
+            "name": "driver_0",
+            "start_configuration_idx": 16,
+            "sleeps_on_road": true,
+            "earliest_start_time": 185.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.2313007,
+                -0.06168817
+            ],
+            "coordinates_end": [
+                -0.42727632,
+                -0.47029269
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 1,
+            "name": "driver_1",
+            "start_configuration_idx": 10,
+            "sleeps_on_road": true,
+            "earliest_start_time": 145.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.49902543,
+                0.06042843
+            ],
+            "coordinates_end": [
+                0.25664611,
+                0.41355019
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 2,
+            "name": "driver_2",
+            "start_configuration_idx": 16,
+            "sleeps_on_road": true,
+            "earliest_start_time": 129.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.31055826,
+                -0.47444595
+            ],
+            "coordinates_end": [
+                0.35423741,
+                -0.18791825
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 3,
+            "name": "driver_3",
+            "start_configuration_idx": 10,
+            "sleeps_on_road": true,
+            "earliest_start_time": 4.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.09484847,
+                -0.46550827
+            ],
+            "coordinates_end": [
+                -0.13233962,
+                0.06749589
+            ],
+            "loaded_orders": [
+                14
+            ],
+            "start_loaded_customers": [
+                28
+            ]
+        },
+        {
+            "idx": 4,
+            "name": "driver_4",
+            "start_configuration_idx": 2,
+            "sleeps_on_road": true,
+            "earliest_start_time": 349.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.44957964,
+                -0.0034625
+            ],
+            "coordinates_end": [
+                0.08108134,
+                -0.48609178
+            ],
+            "loaded_orders": [
+                0
+            ],
+            "start_loaded_customers": [
+                0
+            ]
+        },
+        {
+            "idx": 5,
+            "name": "driver_5",
+            "start_configuration_idx": 16,
+            "sleeps_on_road": true,
+            "earliest_start_time": 311.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.20567714,
+                -0.34323752
+            ],
+            "coordinates_end": [
+                -0.32988179,
+                0.1171581
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        }
+    ],
+    "nodes": [
+        {
+            "idx": 0,
+            "name": "cust_0_loaded_start_pick",
+            "order_number": 0,
+            "customer_type": 2,
+            "event_type": "LLD",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.44957964,
+                -0.0034625
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 1,
+            "name": "cust_1_loaded_start_del",
+            "order_number": 0,
+            "customer_type": 3,
+            "event_type": "LUL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 29.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.10359161,
+                -0.39214094
+            ],
+            "time_window": [
+                468.40064062072656,
+                670.4006406207266
+            ]
+        },
+        {
+            "idx": 2,
+            "name": "cust_2",
+            "order_number": 1,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 56.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.46158787,
+                0.28201958
+            ],
+            "time_window": [
+                691.0871559182772,
+                1071.0871559182772
+            ]
+        },
+        {
+            "idx": 3,
+            "name": "cust_3",
+            "order_number": 1,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 59.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.28576687,
+                0.02820678
+            ],
+            "time_window": [
+                853.1356976464892,
+                939.1356976464892
+            ]
+        },
+        {
+            "idx": 4,
+            "name": "cust_4",
+            "order_number": 2,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 48.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.1197861,
+                0.17605305
+            ],
+            "time_window": [
+                211.91752560454006,
+                468.91752560454006
+            ]
+        },
+        {
+            "idx": 5,
+            "name": "cust_5",
+            "order_number": 2,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 21.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.02060007,
+                0.42270691
+            ],
+            "time_window": [
+                886.9551332187473,
+                1230.9551332187473
+            ]
+        },
+        {
+            "idx": 6,
+            "name": "cust_6",
+            "order_number": 3,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 44.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.38185491,
+                0.41732843
+            ],
+            "time_window": [
+                242.78599238128444,
+                675.7859923812845
+            ]
+        },
+        {
+            "idx": 7,
+            "name": "cust_7",
+            "order_number": 3,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 25.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.06515654,
+                0.23803852
+            ],
+            "time_window": [
+                371.6736105491202,
+                630.6736105491202
+            ]
+        },
+        {
+            "idx": 8,
+            "name": "cust_8",
+            "order_number": 4,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 18.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.44287504,
+                -0.37630367
+            ],
+            "time_window": [
+                198.39051893994088,
+                628.3905189399409
+            ]
+        },
+        {
+            "idx": 9,
+            "name": "cust_9",
+            "order_number": 4,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 49.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.06637157,
+                -0.38788856
+            ],
+            "time_window": [
+                501.34733688720326,
+                699.3473368872033
+            ]
+        },
+        {
+            "idx": 10,
+            "name": "cust_10",
+            "order_number": 5,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 23.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.44598228,
+                -0.03497195
+            ],
+            "time_window": [
+                689.5245985836341,
+                1124.524598583634
+            ]
+        },
+        {
+            "idx": 11,
+            "name": "cust_11",
+            "order_number": 5,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 50.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.29601933,
+                -0.41736035
+            ],
+            "time_window": [
+                828.1322070256573,
+                979.1322070256573
+            ]
+        },
+        {
+            "idx": 12,
+            "name": "cust_12_tomorrow_pick",
+            "order_number": 6,
+            "customer_type": 8,
+            "event_type": "LLD",
+            "request_idx": 6,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.18490322,
+                -0.11860928
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 13,
+            "name": "cust_13_tomorrow_del",
+            "order_number": 6,
+            "customer_type": 9,
+            "event_type": "DRL",
+            "request_idx": 6,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.15277454,
+                0.02243436
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 14,
+            "name": "cust_14",
+            "order_number": 7,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 7,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 45.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.07627025,
+                -0.21139321
+            ],
+            "time_window": [
+                217.0792664907646,
+                600.0792664907647
+            ]
+        },
+        {
+            "idx": 15,
+            "name": "cust_15",
+            "order_number": 7,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 7,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 26.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.46797233,
+                0.39774747
+            ],
+            "time_window": [
+                1053.0388848959885,
+                1440.0
+            ]
+        },
+        {
+            "idx": 16,
+            "name": "cust_16",
+            "order_number": 8,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 8,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 52.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.49317271,
+                0.11692979
+            ],
+            "time_window": [
+                422.4275026199801,
+                525.42750261998
+            ]
+        },
+        {
+            "idx": 17,
+            "name": "cust_17",
+            "order_number": 8,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 8,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 46.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.24058732,
+                0.09556736
+            ],
+            "time_window": [
+                667.0841954548698,
+                976.0841954548698
+            ]
+        },
+        {
+            "idx": 18,
+            "name": "cust_18",
+            "order_number": 9,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 9,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 15.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.24612896,
+                0.27231303
+            ],
+            "time_window": [
+                530.6954869942821,
+                837.6954869942821
+            ]
+        },
+        {
+            "idx": 19,
+            "name": "cust_19",
+            "order_number": 9,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 9,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 36.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.48704612,
+                -0.04442565
+            ],
+            "time_window": [
+                962.6630409979817,
+                1400.6630409979816
+            ]
+        },
+        {
+            "idx": 20,
+            "name": "cust_20",
+            "order_number": 10,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 10,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 24.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.47326949,
+                0.00106577
+            ],
+            "time_window": [
+                445.94820678161454,
+                830.9482067816145
+            ]
+        },
+        {
+            "idx": 21,
+            "name": "cust_21",
+            "order_number": 10,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 10,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 40.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.44754171,
+                -0.44705095
+            ],
+            "time_window": [
+                1227.3479420783606,
+                1440.0
+            ]
+        },
+        {
+            "idx": 22,
+            "name": "cust_22",
+            "order_number": 11,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 11,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 51.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.02929755,
+                -0.37316526
+            ],
+            "time_window": [
+                526.6626648571832,
+                980.6626648571832
+            ]
+        },
+        {
+            "idx": 23,
+            "name": "cust_23",
+            "order_number": 11,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 11,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 33.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.03308782,
+                -0.40237724
+            ],
+            "time_window": [
+                844.0165161926395,
+                1120.0165161926395
+            ]
+        },
+        {
+            "idx": 24,
+            "name": "cust_24",
+            "order_number": 12,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 12,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 26.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.42028311,
+                0.17311817
+            ],
+            "time_window": [
+                667.2337293520934,
+                798.2337293520934
+            ]
+        },
+        {
+            "idx": 25,
+            "name": "cust_25",
+            "order_number": 12,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 12,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 55.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.45945086,
+                0.45614903
+            ],
+            "time_window": [
+                949.9259213458561,
+                1309.925921345856
+            ]
+        },
+        {
+            "idx": 26,
+            "name": "cust_26",
+            "order_number": 13,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 13,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 59.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.25064993,
+                -0.00303298
+            ],
+            "time_window": [
+                716.3344105397015,
+                1129.3344105397014
+            ]
+        },
+        {
+            "idx": 27,
+            "name": "cust_27",
+            "order_number": 13,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 13,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 48.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.48652801,
+                -0.46955346
+            ],
+            "time_window": [
+                1035.5215011518217,
+                1202.5215011518217
+            ]
+        },
+        {
+            "idx": 28,
+            "name": "cust_28_loaded_start_pick",
+            "order_number": 14,
+            "customer_type": 2,
+            "event_type": "LLD",
+            "request_idx": 14,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 0.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.09484847,
+                -0.46550827
+            ],
+            "time_window": [
+                0.0,
+                1440.0
+            ]
+        },
+        {
+            "idx": 29,
+            "name": "cust_29_loaded_start_del",
+            "order_number": 14,
+            "customer_type": 3,
+            "event_type": "LUL",
+            "request_idx": 14,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 45.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.05678573,
+                0.08471681
+            ],
+            "time_window": [
+                723.4775087794767,
+                832.4775087794767
+            ]
+        },
+        {
+            "idx": 30,
+            "name": "cust_30",
+            "order_number": 15,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 15,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 29.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.18231316,
+                0.36153719
+            ],
+            "time_window": [
+                467.41441833810563,
+                781.4144183381056
+            ]
+        },
+        {
+            "idx": 31,
+            "name": "cust_31",
+            "order_number": 15,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 15,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 44.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.19010577,
+                -0.33846251
+            ],
+            "time_window": [
+                1276.1708636619585,
+                1440.0
+            ]
+        }
+    ],
+    "yards": [
+        {
+            "idx": 0,
+            "name": "yard_0",
+            "coordinates": [
+                -0.17193121,
+                0.16183471
+            ]
+        }
+    ],
+    "configurations_graph": {
+        "12,2": [
+            5
+        ],
+        "13,5": [
+            2
+        ],
+        "14,6": [
+            7,
+            8
+        ],
+        "14,8": [
+            9
+        ],
+        "14,10": [
+            11
+        ],
+        "14,12": [
+            14,
+            13
+        ],
+        "14,13": [
+            15
+        ],
+        "14,16": [
+            17,
+            18
+        ],
+        "14,18": [
+            19
+        ],
+        "14,0": [
+            1
+        ],
+        "14,2": [
+            4,
+            3
+        ],
+        "14,3": [
+            5
+        ],
+        "14,4": [
+            5
+        ],
+        "14,7": [
+            9
+        ],
+        "14,14": [
+            15
+        ],
+        "14,17": [
+            19
+        ],
+        "15,7": [
+            6
+        ],
+        "15,9": [
+            8
+        ],
+        "15,11": [
+            10
+        ],
+        "15,14": [
+            12
+        ],
+        "15,15": [
+            13
+        ],
+        "15,17": [
+            16
+        ],
+        "15,19": [
+            18
+        ],
+        "16,2": [
+            5
+        ],
+        "16,6": [
+            9
+        ],
+        "16,12": [
+            15
+        ],
+        "16,16": [
+            19
+        ],
+        "17,5": [
+            2
+        ],
+        "17,9": [
+            6
+        ],
+        "17,15": [
+            12
+        ],
+        "17,19": [
+            16
+        ],
+        "18,0": [
+            1
+        ],
+        "18,2": [
+            4,
+            3
+        ],
+        "18,3": [
+            5
+        ],
+        "18,4": [
+            5
+        ],
+        "18,6": [
+            8
+        ],
+        "18,7": [
+            9
+        ],
+        "18,12": [
+            13
+        ],
+        "18,14": [
+            15
+        ],
+        "18,16": [
+            18
+        ],
+        "18,17": [
+            19
+        ],
+        "19,1": [
+            0
+        ],
+        "19,3": [
+            2
+        ],
+        "19,4": [
+            2
+        ],
+        "19,5": [
+            3,
+            4
+        ],
+        "19,8": [
+            6
+        ],
+        "19,9": [
+            7
+        ],
+        "19,13": [
+            12
+        ],
+        "19,15": [
+            14
+        ],
+        "19,18": [
+            16
+        ],
+        "19,19": [
+            17
+        ],
+        "20,0": [
+            1
+        ],
+        "20,2": [
+            4,
+            3
+        ],
+        "20,3": [
+            5
+        ],
+        "20,4": [
+            5
+        ],
+        "20,6": [
+            8
+        ],
+        "20,7": [
+            9
+        ],
+        "20,12": [
+            13
+        ],
+        "20,14": [
+            15
+        ],
+        "20,16": [
+            18
+        ],
+        "20,17": [
+            19
+        ],
+        "21,1": [
+            0
+        ],
+        "21,3": [
+            2
+        ],
+        "21,4": [
+            2
+        ],
+        "21,5": [
+            3,
+            4
+        ],
+        "21,8": [
+            6
+        ],
+        "21,9": [
+            7
+        ],
+        "21,13": [
+            12
+        ],
+        "21,15": [
+            14
+        ],
+        "21,18": [
+            16
+        ],
+        "21,19": [
+            17
+        ],
+        "22,0": [
+            1
+        ],
+        "22,2": [
+            4,
+            3
+        ],
+        "22,3": [
+            5
+        ],
+        "22,4": [
+            5
+        ],
+        "22,6": [
+            8
+        ],
+        "22,7": [
+            9
+        ],
+        "22,12": [
+            13
+        ],
+        "22,14": [
+            15
+        ],
+        "22,16": [
+            18
+        ],
+        "22,17": [
+            19
+        ],
+        "23,1": [
+            0
+        ],
+        "23,3": [
+            2
+        ],
+        "23,4": [
+            2
+        ],
+        "23,5": [
+            3,
+            4
+        ],
+        "23,8": [
+            6
+        ],
+        "23,9": [
+            7
+        ],
+        "23,13": [
+            12
+        ],
+        "23,15": [
+            14
+        ],
+        "23,18": [
+            16
+        ],
+        "23,19": [
+            17
+        ],
+        "24,0": [
+            1
+        ],
+        "24,2": [
+            4,
+            3
+        ],
+        "24,3": [
+            5
+        ],
+        "24,4": [
+            5
+        ],
+        "24,6": [
+            8
+        ],
+        "24,7": [
+            9
+        ],
+        "24,12": [
+            13
+        ],
+        "24,14": [
+            15
+        ],
+        "24,16": [
+            18
+        ],
+        "24,17": [
+            19
+        ],
+        "25,1": [
+            0
+        ],
+        "25,3": [
+            2
+        ],
+        "25,4": [
+            2
+        ],
+        "25,5": [
+            3,
+            4
+        ],
+        "25,8": [
+            6
+        ],
+        "25,9": [
+            7
+        ],
+        "25,13": [
+            12
+        ],
+        "25,15": [
+            14
+        ],
+        "25,18": [
+            16
+        ],
+        "25,19": [
+            17
+        ],
+        "26,6": [
+            7
+        ],
+        "26,8": [
+            9
+        ],
+        "26,10": [
+            11
+        ],
+        "26,12": [
+            14
+        ],
+        "26,13": [
+            15
+        ],
+        "26,16": [
+            17
+        ],
+        "26,18": [
+            19
+        ],
+        "27,7": [
+            6
+        ],
+        "27,9": [
+            8
+        ],
+        "27,11": [
+            10
+        ],
+        "27,14": [
+            12
+        ],
+        "27,15": [
+            13
+        ],
+        "27,17": [
+            16
+        ],
+        "27,19": [
+            18
+        ],
+        "28,6": [
+            7
+        ],
+        "28,8": [
+            9
+        ],
+        "28,10": [
+            11
+        ],
+        "28,12": [
+            14
+        ],
+        "28,13": [
+            15
+        ],
+        "28,16": [
+            17
+        ],
+        "28,18": [
+            19
+        ],
+        "29,7": [
+            6
+        ],
+        "29,9": [
+            8
+        ],
+        "29,11": [
+            10
+        ],
+        "29,14": [
+            12
+        ],
+        "29,15": [
+            13
+        ],
+        "29,17": [
+            16
+        ],
+        "29,19": [
+            18
+        ],
+        "30,0": [
+            1
+        ],
+        "30,2": [
+            4,
+            3
+        ],
+        "30,3": [
+            5
+        ],
+        "30,4": [
+            5
+        ],
+        "30,6": [
+            8
+        ],
+        "30,7": [
+            9
+        ],
+        "30,12": [
+            13
+        ],
+        "30,14": [
+            15
+        ],
+        "30,16": [
+            18
+        ],
+        "30,17": [
+            19
+        ],
+        "31,1": [
+            0
+        ],
+        "31,3": [
+            2
+        ],
+        "31,4": [
+            2
+        ],
+        "31,5": [
+            3,
+            4
+        ],
+        "31,8": [
+            6
+        ],
+        "31,9": [
+            7
+        ],
+        "31,13": [
+            12
+        ],
+        "31,15": [
+            14
+        ],
+        "31,18": [
+            16
+        ],
+        "31,19": [
+            17
+        ],
+        "32,6": [
+            7
+        ],
+        "32,8": [
+            9
+        ],
+        "32,10": [
+            11
+        ],
+        "32,12": [
+            14
+        ],
+        "32,13": [
+            15
+        ],
+        "32,16": [
+            17
+        ],
+        "32,18": [
+            19
+        ],
+        "33,7": [
+            6
+        ],
+        "33,9": [
+            8
+        ],
+        "33,11": [
+            10
+        ],
+        "33,14": [
+            12
+        ],
+        "33,15": [
+            13
+        ],
+        "33,17": [
+            16
+        ],
+        "33,19": [
+            18
+        ],
+        "34,6": [
+            7
+        ],
+        "34,8": [
+            9
+        ],
+        "34,10": [
+            11
+        ],
+        "34,12": [
+            14
+        ],
+        "34,13": [
+            15
+        ],
+        "34,16": [
+            17
+        ],
+        "34,18": [
+            19
+        ],
+        "35,7": [
+            6
+        ],
+        "35,9": [
+            8
+        ],
+        "35,11": [
+            10
+        ],
+        "35,14": [
+            12
+        ],
+        "35,15": [
+            13
+        ],
+        "35,17": [
+            16
+        ],
+        "35,19": [
+            18
+        ],
+        "36,6": [
+            7
+        ],
+        "36,8": [
+            9
+        ],
+        "36,10": [
+            11
+        ],
+        "36,12": [
+            14
+        ],
+        "36,13": [
+            15
+        ],
+        "36,16": [
+            17
+        ],
+        "36,18": [
+            19
+        ],
+        "37,7": [
+            6
+        ],
+        "37,9": [
+            8
+        ],
+        "37,11": [
+            10
+        ],
+        "37,14": [
+            12
+        ],
+        "37,15": [
+            13
+        ],
+        "37,17": [
+            16
+        ],
+        "37,19": [
+            18
+        ],
+        "38,6": [
+            7
+        ],
+        "38,8": [
+            9
+        ],
+        "38,10": [
+            11
+        ],
+        "38,12": [
+            14
+        ],
+        "38,13": [
+            15
+        ],
+        "38,16": [
+            17
+        ],
+        "38,18": [
+            19
+        ],
+        "39,7": [
+            6
+        ],
+        "39,9": [
+            8
+        ],
+        "39,11": [
+            10
+        ],
+        "39,14": [
+            12
+        ],
+        "39,15": [
+            13
+        ],
+        "39,17": [
+            16
+        ],
+        "39,19": [
+            18
+        ],
+        "40,10": [
+            11
+        ],
+        "41,11": [
+            10
+        ],
+        "42,0": [
+            1
+        ],
+        "42,2": [
+            4,
+            3
+        ],
+        "42,3": [
+            5
+        ],
+        "42,4": [
+            5
+        ],
+        "42,6": [
+            8
+        ],
+        "42,7": [
+            9
+        ],
+        "42,12": [
+            13
+        ],
+        "42,14": [
+            15
+        ],
+        "42,16": [
+            18
+        ],
+        "42,17": [
+            19
+        ],
+        "43,1": [
+            0
+        ],
+        "43,3": [
+            2
+        ],
+        "43,4": [
+            2
+        ],
+        "43,5": [
+            3,
+            4
+        ],
+        "43,8": [
+            6
+        ],
+        "43,9": [
+            7
+        ],
+        "43,13": [
+            12
+        ],
+        "43,15": [
+            14
+        ],
+        "43,18": [
+            16
+        ],
+        "43,19": [
+            17
+        ]
+    },
+    "search_for_empty": [
+        "empt"
+    ],
+    "search_for_full": [
+        "full"
+    ],
+    "z_requirements_config_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_config": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ]
+}

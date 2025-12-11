@@ -1,0 +1,1128 @@
+{
+    "n_drivers": 2,
+    "n_requests": 6,
+    "n_yards": 1,
+    "n_configs": 20,
+    "params": {
+        "cost_driving_km": 1.5,
+        "cost_driver_min": 0.5,
+        "distance_factor": 1.0,
+        "average_speed_km_h": 60.0,
+        "time_horizon": 1440.0,
+        "max_work_duration_min": 900.0,
+        "max_work_duration_reduced_min": 720.0,
+        "reduced_time_boundary": 300.0,
+        "yard_changeover_time_min": 30.0,
+        "max_yard_visits_per_driver": 3,
+        "distanceCalculationMethod": "Haversine"
+    },
+    "assets": [
+        {
+            "idx": 0,
+            "name": "TR.tr1.empt",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 1,
+            "name": "TR.tr1.full",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 2,
+            "name": "SB.sb1.empt",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 3,
+            "name": "SB.sb1.full",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 4,
+            "name": "Truck",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 5,
+            "name": "Hangr",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 6,
+            "name": "Dolly",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 7,
+            "name": "Tract",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 8,
+            "name": "Bdoub",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        }
+    ],
+    "configurations": [
+        {
+            "idx": 0,
+            "name": "Truck<SB.sb1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 1,
+            "name": "Truck<SB.sb1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 2,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 3,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 4,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 5,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 6,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 7,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 8,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 9,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 10,
+            "name": "Tract<TR.tr1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 11,
+            "name": "Tract<TR.tr1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 12,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 13,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 14,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 15,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 16,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 17,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 18,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 19,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.5
+        }
+    ],
+    "drivers": [
+        {
+            "idx": 0,
+            "name": "driver_0",
+            "start_configuration_idx": 12,
+            "sleeps_on_road": false,
+            "earliest_start_time": 272.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.25071068,
+                -0.23463047
+            ],
+            "coordinates_end": [
+                -0.25614452,
+                -0.18222024
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 1,
+            "name": "driver_1",
+            "start_configuration_idx": 10,
+            "sleeps_on_road": false,
+            "earliest_start_time": 4.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.38106552,
+                0.26320024
+            ],
+            "coordinates_end": [
+                0.04360531,
+                -0.43702945
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        }
+    ],
+    "nodes": [
+        {
+            "idx": 0,
+            "name": "cust_0",
+            "order_number": 0,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 15.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.11287427,
+                0.29621478
+            ],
+            "time_window": [
+                648.2004234406457,
+                1080.2004234406459
+            ]
+        },
+        {
+            "idx": 1,
+            "name": "cust_1",
+            "order_number": 0,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 54.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.47434343,
+                -0.10943918
+            ],
+            "time_window": [
+                807.6717302565069,
+                1159.6717302565069
+            ]
+        },
+        {
+            "idx": 2,
+            "name": "cust_2",
+            "order_number": 1,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 24.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.15960258,
+                0.1518698
+            ],
+            "time_window": [
+                229.14698999623332,
+                341.1469899962333
+            ]
+        },
+        {
+            "idx": 3,
+            "name": "cust_3",
+            "order_number": 1,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 57.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.40956731,
+                0.4337923
+            ],
+            "time_window": [
+                1333.3308654193852,
+                1440.0
+            ]
+        },
+        {
+            "idx": 4,
+            "name": "cust_4",
+            "order_number": 2,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 30.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.33882939,
+                0.09576751
+            ],
+            "time_window": [
+                338.98026306211705,
+                732.980263062117
+            ]
+        },
+        {
+            "idx": 5,
+            "name": "cust_5",
+            "order_number": 2,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 44.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.35542157,
+                -0.35136507
+            ],
+            "time_window": [
+                1018.7105815333075,
+                1440.0
+            ]
+        },
+        {
+            "idx": 6,
+            "name": "cust_6",
+            "order_number": 3,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 19.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.48578623,
+                -0.07385384
+            ],
+            "time_window": [
+                687.5406683808061,
+                750.5406683808061
+            ]
+        },
+        {
+            "idx": 7,
+            "name": "cust_7",
+            "order_number": 3,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 30.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.10018062,
+                0.07737169
+            ],
+            "time_window": [
+                805.1583743109096,
+                1095.1583743109095
+            ]
+        },
+        {
+            "idx": 8,
+            "name": "cust_8",
+            "order_number": 4,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 27.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.26545068,
+                -0.4762842
+            ],
+            "time_window": [
+                514.2163004424392,
+                884.2163004424392
+            ]
+        },
+        {
+            "idx": 9,
+            "name": "cust_9",
+            "order_number": 4,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 44.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.15654033,
+                0.15016143
+            ],
+            "time_window": [
+                786.0752229317625,
+                1104.0752229317625
+            ]
+        },
+        {
+            "idx": 10,
+            "name": "cust_10",
+            "order_number": 5,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 16.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.10215497,
+                -0.45186476
+            ],
+            "time_window": [
+                650.777878240938,
+                787.777878240938
+            ]
+        },
+        {
+            "idx": 11,
+            "name": "cust_11",
+            "order_number": 5,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 27.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.38039334,
+                0.49364523
+            ],
+            "time_window": [
+                814.6637031789236,
+                1105.6637031789237
+            ]
+        }
+    ],
+    "yards": [
+        {
+            "idx": 0,
+            "name": "yard_0",
+            "coordinates": [
+                0.40921309,
+                -0.37306299
+            ]
+        }
+    ],
+    "configurations_graph": {
+        "4,6": [
+            7
+        ],
+        "4,8": [
+            9
+        ],
+        "4,10": [
+            11
+        ],
+        "4,12": [
+            14
+        ],
+        "4,13": [
+            15
+        ],
+        "4,16": [
+            17
+        ],
+        "4,18": [
+            19
+        ],
+        "5,7": [
+            6
+        ],
+        "5,9": [
+            8
+        ],
+        "5,11": [
+            10
+        ],
+        "5,14": [
+            12
+        ],
+        "5,15": [
+            13
+        ],
+        "5,17": [
+            16
+        ],
+        "5,19": [
+            18
+        ],
+        "6,0": [
+            1
+        ],
+        "6,2": [
+            4,
+            3
+        ],
+        "6,3": [
+            5
+        ],
+        "6,4": [
+            5
+        ],
+        "6,6": [
+            8
+        ],
+        "6,7": [
+            9
+        ],
+        "6,12": [
+            13
+        ],
+        "6,14": [
+            15
+        ],
+        "6,16": [
+            18
+        ],
+        "6,17": [
+            19
+        ],
+        "7,1": [
+            0
+        ],
+        "7,3": [
+            2
+        ],
+        "7,4": [
+            2
+        ],
+        "7,5": [
+            3,
+            4
+        ],
+        "7,8": [
+            6
+        ],
+        "7,9": [
+            7
+        ],
+        "7,13": [
+            12
+        ],
+        "7,15": [
+            14
+        ],
+        "7,18": [
+            16
+        ],
+        "7,19": [
+            17
+        ],
+        "8,2": [
+            5
+        ],
+        "8,6": [
+            9
+        ],
+        "8,12": [
+            15
+        ],
+        "8,16": [
+            19
+        ],
+        "9,5": [
+            2
+        ],
+        "9,9": [
+            6
+        ],
+        "9,15": [
+            12
+        ],
+        "9,19": [
+            16
+        ],
+        "10,6": [
+            7
+        ],
+        "10,8": [
+            9
+        ],
+        "10,10": [
+            11
+        ],
+        "10,12": [
+            14
+        ],
+        "10,13": [
+            15
+        ],
+        "10,16": [
+            17
+        ],
+        "10,18": [
+            19
+        ],
+        "11,7": [
+            6
+        ],
+        "11,9": [
+            8
+        ],
+        "11,11": [
+            10
+        ],
+        "11,14": [
+            12
+        ],
+        "11,15": [
+            13
+        ],
+        "11,17": [
+            16
+        ],
+        "11,19": [
+            18
+        ],
+        "12,0": [
+            1
+        ],
+        "12,2": [
+            4,
+            3
+        ],
+        "12,3": [
+            5
+        ],
+        "12,4": [
+            5
+        ],
+        "12,6": [
+            8
+        ],
+        "12,7": [
+            9
+        ],
+        "12,12": [
+            13
+        ],
+        "12,14": [
+            15
+        ],
+        "12,16": [
+            18
+        ],
+        "12,17": [
+            19
+        ],
+        "13,1": [
+            0
+        ],
+        "13,3": [
+            2
+        ],
+        "13,4": [
+            2
+        ],
+        "13,5": [
+            3,
+            4
+        ],
+        "13,8": [
+            6
+        ],
+        "13,9": [
+            7
+        ],
+        "13,13": [
+            12
+        ],
+        "13,15": [
+            14
+        ],
+        "13,18": [
+            16
+        ],
+        "13,19": [
+            17
+        ],
+        "14,2": [
+            5
+        ],
+        "14,6": [
+            9
+        ],
+        "14,12": [
+            15
+        ],
+        "14,16": [
+            19
+        ],
+        "15,5": [
+            2
+        ],
+        "15,9": [
+            6
+        ],
+        "15,15": [
+            12
+        ],
+        "15,19": [
+            16
+        ]
+    },
+    "search_for_empty": [
+        "empt"
+    ],
+    "search_for_full": [
+        "full"
+    ],
+    "z_requirements_config_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_config": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ]
+}
