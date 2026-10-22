@@ -1,0 +1,281 @@
+{
+    "allow_switch_front": true,
+    "driving_cost": 989.5258819943091,
+    "instance": "F1-3-10-3",
+    "lower_bound": 5575.3966857657415,
+    "mip_gap": 0.0,
+    "n_outsourced": 4,
+    "n_requests_total": 10,
+    "n_solutions": 6,
+    "objective": 5575.3966857657415,
+    "outsourced": [
+        {
+            "name": "cust_4",
+            "penalty": 1000.0,
+            "request_idx": 2
+        },
+        {
+            "name": "cust_6_loaded_end_pick",
+            "penalty": 1000.0,
+            "request_idx": 3
+        },
+        {
+            "name": "cust_16",
+            "penalty": 1000.0,
+            "request_idx": 8
+        },
+        {
+            "name": "cust_18",
+            "penalty": 1000.0,
+            "request_idx": 9
+        }
+    ],
+    "penalty": 4000.0,
+    "routes": [
+        {
+            "complete": true,
+            "driver_id": "driver_0",
+            "driver_idx": 0,
+            "driving_cost": 101.86855526981572,
+            "duration": 106.73851834534275,
+            "nodes": [
+                0,
+                20,
+                21,
+                1
+            ],
+            "nodes_milp": [
+                0,
+                20,
+                21,
+                1
+            ],
+            "reduced_working_time": false,
+            "stops": [
+                {
+                    "arrival_time": 684.7727613872426,
+                    "config_in": -1,
+                    "config_in_name": null,
+                    "name": "START",
+                    "node": 0,
+                    "node_milp": 0,
+                    "type": "DriverStart"
+                },
+                {
+                    "arrival_time": 684.7727613872426,
+                    "config_in": 0,
+                    "config_in_name": "Truck<SB.sb1.empt>",
+                    "name": "cust_14_loaded_start_pick",
+                    "node": 20,
+                    "node_milp": 20,
+                    "type": 2
+                },
+                {
+                    "arrival_time": 746.5112797325854,
+                    "config_in": 1,
+                    "config_in_name": "Truck<SB.sb1.full>",
+                    "name": "cust_15_loaded_start_del",
+                    "node": 21,
+                    "node_milp": 21,
+                    "type": 3
+                },
+                {
+                    "arrival_time": 791.5112797325853,
+                    "config_in": 0,
+                    "config_in_name": "Truck<SB.sb1.empt>",
+                    "name": "END",
+                    "node": 1,
+                    "node_milp": 1,
+                    "type": "DriverEnd"
+                }
+            ]
+        },
+        {
+            "complete": true,
+            "driver_id": "driver_1",
+            "driver_idx": 1,
+            "driving_cost": 586.1109724334424,
+            "duration": 813.9663277691648,
+            "nodes": [
+                2,
+                8,
+                9,
+                18,
+                16,
+                19,
+                14,
+                17,
+                15,
+                3
+            ],
+            "nodes_milp": [
+                2,
+                8,
+                9,
+                18,
+                16,
+                19,
+                14,
+                17,
+                15,
+                3
+            ],
+            "reduced_working_time": false,
+            "stops": [
+                {
+                    "arrival_time": 512.379497658655,
+                    "config_in": -1,
+                    "config_in_name": null,
+                    "name": "START",
+                    "node": 2,
+                    "node_milp": 2,
+                    "type": "DriverStart"
+                },
+                {
+                    "arrival_time": 512.379497658655,
+                    "config_in": 2,
+                    "config_in_name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+                    "name": "cust_2_loaded_start_pick",
+                    "node": 8,
+                    "node_milp": 8,
+                    "type": 2
+                },
+                {
+                    "arrival_time": 526.0065281975767,
+                    "config_in": 5,
+                    "config_in_name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+                    "name": "cust_3_loaded_start_del",
+                    "node": 9,
+                    "node_milp": 9,
+                    "type": 3
+                },
+                {
+                    "arrival_time": 634.923696654896,
+                    "config_in": 2,
+                    "config_in_name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+                    "name": "cust_12",
+                    "node": 18,
+                    "node_milp": 18,
+                    "type": 4
+                },
+                {
+                    "arrival_time": 669.4475671747678,
+                    "config_in": 4,
+                    "config_in_name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+                    "name": "cust_10",
+                    "node": 16,
+                    "node_milp": 16,
+                    "type": 4
+                },
+                {
+                    "arrival_time": 976.1100637580175,
+                    "config_in": 5,
+                    "config_in_name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+                    "name": "cust_13",
+                    "node": 19,
+                    "node_milp": 19,
+                    "type": 5
+                },
+                {
+                    "arrival_time": 1073.7770356954197,
+                    "config_in": 3,
+                    "config_in_name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.full>",
+                    "name": "cust_8",
+                    "node": 14,
+                    "node_milp": 14,
+                    "type": 4
+                },
+                {
+                    "arrival_time": 1207.2837097352444,
+                    "config_in": 5,
+                    "config_in_name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+                    "name": "cust_11",
+                    "node": 17,
+                    "node_milp": 17,
+                    "type": 5
+                },
+                {
+                    "arrival_time": 1285.3458254278198,
+                    "config_in": 4,
+                    "config_in_name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+                    "name": "cust_9",
+                    "node": 15,
+                    "node_milp": 15,
+                    "type": 5
+                },
+                {
+                    "arrival_time": 1326.3458254278198,
+                    "config_in": 2,
+                    "config_in_name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+                    "name": "END",
+                    "node": 3,
+                    "node_milp": 3,
+                    "type": "DriverEnd"
+                }
+            ]
+        },
+        {
+            "complete": true,
+            "driver_id": "driver_2",
+            "driver_idx": 2,
+            "driving_cost": 301.546354291051,
+            "duration": 251.0367614283573,
+            "nodes": [
+                4,
+                6,
+                7,
+                5
+            ],
+            "nodes_milp": [
+                4,
+                6,
+                7,
+                5
+            ],
+            "reduced_working_time": false,
+            "stops": [
+                {
+                    "arrival_time": 771.1122026024088,
+                    "config_in": -1,
+                    "config_in_name": null,
+                    "name": "START",
+                    "node": 4,
+                    "node_milp": 4,
+                    "type": "DriverStart"
+                },
+                {
+                    "arrival_time": 771.1122026024088,
+                    "config_in": 0,
+                    "config_in_name": "Truck<SB.sb1.empt>",
+                    "name": "cust_0_loaded_start_pick",
+                    "node": 6,
+                    "node_milp": 6,
+                    "type": 2
+                },
+                {
+                    "arrival_time": 851.0536169258446,
+                    "config_in": 1,
+                    "config_in_name": "Truck<SB.sb1.full>",
+                    "name": "cust_1_loaded_start_del",
+                    "node": 7,
+                    "node_milp": 7,
+                    "type": 3
+                },
+                {
+                    "arrival_time": 1022.1489640307661,
+                    "config_in": 0,
+                    "config_in_name": "Truck<SB.sb1.empt>",
+                    "name": "END",
+                    "node": 5,
+                    "node_milp": 5,
+                    "type": "DriverEnd"
+                }
+            ]
+        }
+    ],
+    "solve_time": 1.7313520908355713,
+    "solver": "Gurobi MILP",
+    "status": "Optimal",
+    "time_in_objective": true,
+    "valid_inequalities": true
+}

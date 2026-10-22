@@ -1,0 +1,3905 @@
+{
+    "n_drivers": 3,
+    "n_requests": 10,
+    "n_yards": 1,
+    "n_configs": 64,
+    "params": {
+        "cost_driving_km": 1.5,
+        "cost_driver_min": 0.5,
+        "distance_factor": 1.0,
+        "average_speed_km_h": 60.0,
+        "time_horizon": 1440.0,
+        "max_work_duration_min": 900.0,
+        "max_work_duration_reduced_min": 720.0,
+        "reduced_time_boundary": 300.0,
+        "yard_changeover_time_min": 30.0,
+        "max_yard_visits_per_driver": 3,
+        "distanceCalculationMethod": "Haversine"
+    },
+    "assets": [
+        {
+            "idx": 0,
+            "name": "TR.tr1.empt",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 1,
+            "name": "TR.tr1.full",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 2,
+            "name": "TR.tr2.empt",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 3,
+            "name": "TR.tr2.full",
+            "resource_type": "TR",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 4,
+            "name": "SB.sb1.empt",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 5,
+            "name": "SB.sb1.full",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 6,
+            "name": "SB.sb2.empt",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": false,
+            "is_empt": true,
+            "is_none": false
+        },
+        {
+            "idx": 7,
+            "name": "SB.sb2.full",
+            "resource_type": "SB",
+            "is_chassis": false,
+            "is_full": true,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 8,
+            "name": "Truck",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 9,
+            "name": "Hangr",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 10,
+            "name": "Dolly",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 11,
+            "name": "Tract",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        },
+        {
+            "idx": 12,
+            "name": "Bdoub",
+            "resource_type": "",
+            "is_chassis": true,
+            "is_full": false,
+            "is_empt": false,
+            "is_none": false
+        }
+    ],
+    "configurations": [
+        {
+            "idx": 0,
+            "name": "Truck<SB.sb1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 1,
+            "name": "Truck<SB.sb1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 2,
+            "name": "Truck<SB.sb2.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 3,
+            "name": "Truck<SB.sb2.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 4,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 5,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 6,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 7,
+            "name": "Truck<SB.sb1.empt>_Hangr<SB.sb2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 8,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 9,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 10,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 11,
+            "name": "Truck<SB.sb1.full>_Hangr<SB.sb2.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 12,
+            "name": "Truck<SB.sb2.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 13,
+            "name": "Truck<SB.sb2.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 14,
+            "name": "Truck<SB.sb2.empt>_Hangr<SB.sb2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 15,
+            "name": "Truck<SB.sb2.empt>_Hangr<SB.sb2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 16,
+            "name": "Truck<SB.sb2.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 17,
+            "name": "Truck<SB.sb2.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 18,
+            "name": "Truck<SB.sb2.full>_Hangr<SB.sb2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 19,
+            "name": "Truck<SB.sb2.full>_Hangr<SB.sb2.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 20,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 21,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 22,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 23,
+            "name": "Truck<SB.sb1.empt>_Dolly<TR.tr2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 24,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 25,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 26,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 27,
+            "name": "Truck<SB.sb1.full>_Dolly<TR.tr2.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 28,
+            "name": "Truck<SB.sb2.empt>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 29,
+            "name": "Truck<SB.sb2.empt>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 30,
+            "name": "Truck<SB.sb2.empt>_Dolly<TR.tr2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 31,
+            "name": "Truck<SB.sb2.empt>_Dolly<TR.tr2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 32,
+            "name": "Truck<SB.sb2.full>_Dolly<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 33,
+            "name": "Truck<SB.sb2.full>_Dolly<TR.tr1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 34,
+            "name": "Truck<SB.sb2.full>_Dolly<TR.tr2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 35,
+            "name": "Truck<SB.sb2.full>_Dolly<TR.tr2.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 36,
+            "name": "Tract<TR.tr1.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 37,
+            "name": "Tract<TR.tr1.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 38,
+            "name": "Tract<TR.tr2.empt>",
+            "emission_factor": 1.0
+        },
+        {
+            "idx": 39,
+            "name": "Tract<TR.tr2.full>",
+            "emission_factor": 1.1
+        },
+        {
+            "idx": 40,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 41,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 42,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 43,
+            "name": "Tract<TR.tr1.empt>_Hangr<SB.sb2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 44,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 45,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 46,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 47,
+            "name": "Tract<TR.tr1.full>_Hangr<SB.sb2.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 48,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 49,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 50,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 51,
+            "name": "Tract<SB.sb1.empt>_Bdoub<TR.tr2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 52,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 53,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 54,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 55,
+            "name": "Tract<SB.sb1.full>_Bdoub<TR.tr2.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 56,
+            "name": "Tract<SB.sb2.empt>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 57,
+            "name": "Tract<SB.sb2.empt>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 58,
+            "name": "Tract<SB.sb2.empt>_Bdoub<TR.tr2.empt>",
+            "emission_factor": 1.3
+        },
+        {
+            "idx": 59,
+            "name": "Tract<SB.sb2.empt>_Bdoub<TR.tr2.full>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 60,
+            "name": "Tract<SB.sb2.full>_Bdoub<TR.tr1.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 61,
+            "name": "Tract<SB.sb2.full>_Bdoub<TR.tr1.full>",
+            "emission_factor": 1.5
+        },
+        {
+            "idx": 62,
+            "name": "Tract<SB.sb2.full>_Bdoub<TR.tr2.empt>",
+            "emission_factor": 1.4
+        },
+        {
+            "idx": 63,
+            "name": "Tract<SB.sb2.full>_Bdoub<TR.tr2.full>",
+            "emission_factor": 1.5
+        }
+    ],
+    "drivers": [
+        {
+            "idx": 0,
+            "name": "driver_0",
+            "start_configuration_idx": 50,
+            "sleeps_on_road": false,
+            "earliest_start_time": 340.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.21480041,
+                0.24150861
+            ],
+            "coordinates_end": [
+                0.15523124,
+                0.31591906
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 1,
+            "name": "driver_1",
+            "start_configuration_idx": 50,
+            "sleeps_on_road": false,
+            "earliest_start_time": 172.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                0.22985035,
+                -0.48637798
+            ],
+            "coordinates_end": [
+                0.30789178,
+                -0.2226153
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        },
+        {
+            "idx": 2,
+            "name": "driver_2",
+            "start_configuration_idx": 4,
+            "sleeps_on_road": false,
+            "earliest_start_time": 298.0,
+            "fixed_cost": 0.0,
+            "coordinates_start": [
+                -0.1766964,
+                0.35038128
+            ],
+            "coordinates_end": [
+                0.41044274,
+                0.26670318
+            ],
+            "loaded_orders": [],
+            "start_loaded_customers": []
+        }
+    ],
+    "nodes": [
+        {
+            "idx": 0,
+            "name": "cust_0",
+            "order_number": 0,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 31.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.470512,
+                0.37793907
+            ],
+            "time_window": [
+                687.1070203234508,
+                1151.1070203234508
+            ]
+        },
+        {
+            "idx": 1,
+            "name": "cust_1",
+            "order_number": 0,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 0,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 18.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.17699724,
+                -0.17446975
+            ],
+            "time_window": [
+                1364.0524364975045,
+                1440.0
+            ]
+        },
+        {
+            "idx": 2,
+            "name": "cust_2",
+            "order_number": 1,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 42.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.23262823,
+                -0.11448002
+            ],
+            "time_window": [
+                389.22085766383486,
+                850.2208576638349
+            ]
+        },
+        {
+            "idx": 3,
+            "name": "cust_3",
+            "order_number": 1,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 1,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 52.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.01602544,
+                0.19588468
+            ],
+            "time_window": [
+                1312.597824808941,
+                1440.0
+            ]
+        },
+        {
+            "idx": 4,
+            "name": "cust_4",
+            "order_number": 2,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 36.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.2504491,
+                0.08009684
+            ],
+            "time_window": [
+                627.5989167601581,
+                765.5989167601581
+            ]
+        },
+        {
+            "idx": 5,
+            "name": "cust_5",
+            "order_number": 2,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 2,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 45.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.48592801,
+                -0.29672189
+            ],
+            "time_window": [
+                1036.162096106232,
+                1099.162096106232
+            ]
+        },
+        {
+            "idx": 6,
+            "name": "cust_6",
+            "order_number": 3,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 56.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.48937173,
+                0.00059186
+            ],
+            "time_window": [
+                250.38480444661903,
+                487.384804446619
+            ]
+        },
+        {
+            "idx": 7,
+            "name": "cust_7",
+            "order_number": 3,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 3,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 50.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.00134448,
+                0.27657701
+            ],
+            "time_window": [
+                999.5472402537533,
+                1416.5472402537534
+            ]
+        },
+        {
+            "idx": 8,
+            "name": "cust_8",
+            "order_number": 4,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 22.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.06767779,
+                -0.22198864
+            ],
+            "time_window": [
+                191.167099088897,
+                440.167099088897
+            ]
+        },
+        {
+            "idx": 9,
+            "name": "cust_9",
+            "order_number": 4,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 4,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 37.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.10091443,
+                -0.04723996
+            ],
+            "time_window": [
+                1212.6413225418376,
+                1418.6413225418376
+            ]
+        },
+        {
+            "idx": 10,
+            "name": "cust_10",
+            "order_number": 5,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 18.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.16202564,
+                -0.23439375
+            ],
+            "time_window": [
+                556.148291194794,
+                802.148291194794
+            ]
+        },
+        {
+            "idx": 11,
+            "name": "cust_11",
+            "order_number": 5,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 5,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 53.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.08929568,
+                -0.25258032
+            ],
+            "time_window": [
+                721.4774893620217,
+                1170.4774893620217
+            ]
+        },
+        {
+            "idx": 12,
+            "name": "cust_12",
+            "order_number": 6,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 6,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 45.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.24716968,
+                0.22982743
+            ],
+            "time_window": [
+                437.7993023863672,
+                867.7993023863671
+            ]
+        },
+        {
+            "idx": 13,
+            "name": "cust_13",
+            "order_number": 6,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 6,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 23.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.400328,
+                0.45581444
+            ],
+            "time_window": [
+                1221.2561126499675,
+                1440.0
+            ]
+        },
+        {
+            "idx": 14,
+            "name": "cust_14",
+            "order_number": 7,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 7,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 29.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.1580583,
+                0.04351577
+            ],
+            "time_window": [
+                715.4013868660736,
+                1073.4013868660736
+            ]
+        },
+        {
+            "idx": 15,
+            "name": "cust_15",
+            "order_number": 7,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 7,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 35.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.08027508,
+                -0.48092485
+            ],
+            "time_window": [
+                833.2450003206771,
+                1084.2450003206773
+            ]
+        },
+        {
+            "idx": 16,
+            "name": "cust_16",
+            "order_number": 8,
+            "customer_type": 4,
+            "event_type": "HPL",
+            "request_idx": 8,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 18.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.13001558,
+                -0.42035829
+            ],
+            "time_window": [
+                605.0505693440684,
+                1074.0505693440684
+            ]
+        },
+        {
+            "idx": 17,
+            "name": "cust_17",
+            "order_number": 8,
+            "customer_type": 5,
+            "event_type": "DRL",
+            "request_idx": 8,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 57.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                -0.25471462,
+                0.05777297
+            ],
+            "time_window": [
+                731.0697476191644,
+                1055.0697476191644
+            ]
+        },
+        {
+            "idx": 18,
+            "name": "cust_18",
+            "order_number": 9,
+            "customer_type": 4,
+            "event_type": "LLD",
+            "request_idx": 9,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 45.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.47778605,
+                0.10589054
+            ],
+            "time_window": [
+                438.0046054225287,
+                843.0046054225287
+            ]
+        },
+        {
+            "idx": 19,
+            "name": "cust_19",
+            "order_number": 9,
+            "customer_type": 5,
+            "event_type": "LUL",
+            "request_idx": 9,
+            "request_homogeneous": false,
+            "request_penalty": 1000.0,
+            "service_time": 37.0,
+            "additional_distance": 0.0,
+            "additional_time": 0.0,
+            "coordinates": [
+                0.08669495,
+                -0.16503154
+            ],
+            "time_window": [
+                1003.5524172469578,
+                1342.5524172469577
+            ]
+        }
+    ],
+    "yards": [
+        {
+            "idx": 0,
+            "name": "yard_0",
+            "coordinates": [
+                0.22331205,
+                0.40326484
+            ]
+        }
+    ],
+    "configurations_graph": {
+        "6,4": [
+            9
+        ],
+        "6,6": [
+            11
+        ],
+        "6,12": [
+            17
+        ],
+        "6,14": [
+            19
+        ],
+        "6,20": [
+            25
+        ],
+        "6,22": [
+            27
+        ],
+        "6,28": [
+            33
+        ],
+        "6,30": [
+            35
+        ],
+        "6,40": [
+            45
+        ],
+        "6,42": [
+            47
+        ],
+        "6,48": [
+            53
+        ],
+        "6,50": [
+            55
+        ],
+        "6,56": [
+            61
+        ],
+        "6,58": [
+            63
+        ],
+        "7,9": [
+            4
+        ],
+        "7,11": [
+            6
+        ],
+        "7,17": [
+            12
+        ],
+        "7,19": [
+            14
+        ],
+        "7,25": [
+            20
+        ],
+        "7,27": [
+            22
+        ],
+        "7,33": [
+            28
+        ],
+        "7,35": [
+            30
+        ],
+        "7,45": [
+            40
+        ],
+        "7,47": [
+            42
+        ],
+        "7,53": [
+            48
+        ],
+        "7,55": [
+            50
+        ],
+        "7,61": [
+            56
+        ],
+        "7,63": [
+            58
+        ],
+        "8,0": [
+            1
+        ],
+        "8,4": [
+            8,
+            5
+        ],
+        "8,5": [
+            9
+        ],
+        "8,6": [
+            10,
+            5
+        ],
+        "8,7": [
+            11
+        ],
+        "8,8": [
+            9
+        ],
+        "8,12": [
+            13,
+            8
+        ],
+        "8,16": [
+            17
+        ],
+        "8,20": [
+            24
+        ],
+        "8,21": [
+            25
+        ],
+        "8,22": [
+            26
+        ],
+        "8,23": [
+            27
+        ],
+        "8,40": [
+            41
+        ],
+        "8,44": [
+            45
+        ],
+        "8,48": [
+            52
+        ],
+        "8,49": [
+            53
+        ],
+        "8,50": [
+            54
+        ],
+        "8,51": [
+            55
+        ],
+        "8,2": [
+            1
+        ],
+        "8,10": [
+            9
+        ],
+        "8,13": [
+            9
+        ],
+        "8,14": [
+            10,
+            13
+        ],
+        "8,15": [
+            11
+        ],
+        "8,18": [
+            17
+        ],
+        "8,28": [
+            24
+        ],
+        "8,29": [
+            25
+        ],
+        "8,30": [
+            26
+        ],
+        "8,31": [
+            27
+        ],
+        "8,42": [
+            41
+        ],
+        "8,46": [
+            45
+        ],
+        "8,56": [
+            52
+        ],
+        "8,57": [
+            53
+        ],
+        "8,58": [
+            54
+        ],
+        "8,59": [
+            55
+        ],
+        "9,1": [
+            2
+        ],
+        "9,5": [
+            6
+        ],
+        "9,8": [
+            12
+        ],
+        "9,9": [
+            13,
+            10
+        ],
+        "9,10": [
+            14
+        ],
+        "9,11": [
+            15
+        ],
+        "9,13": [
+            14
+        ],
+        "9,17": [
+            18
+        ],
+        "9,24": [
+            28
+        ],
+        "9,25": [
+            29
+        ],
+        "9,26": [
+            30
+        ],
+        "9,27": [
+            31
+        ],
+        "9,41": [
+            42
+        ],
+        "9,45": [
+            46
+        ],
+        "9,52": [
+            56
+        ],
+        "9,53": [
+            57
+        ],
+        "9,54": [
+            58
+        ],
+        "9,55": [
+            59
+        ],
+        "10,0": [
+            1
+        ],
+        "10,4": [
+            8,
+            5
+        ],
+        "10,5": [
+            9
+        ],
+        "10,6": [
+            10
+        ],
+        "10,7": [
+            11
+        ],
+        "10,8": [
+            9
+        ],
+        "10,12": [
+            13
+        ],
+        "10,16": [
+            17
+        ],
+        "10,20": [
+            24
+        ],
+        "10,21": [
+            25
+        ],
+        "10,22": [
+            26
+        ],
+        "10,23": [
+            27
+        ],
+        "10,40": [
+            41
+        ],
+        "10,44": [
+            45
+        ],
+        "10,48": [
+            52
+        ],
+        "10,49": [
+            53
+        ],
+        "10,50": [
+            54
+        ],
+        "10,51": [
+            55
+        ],
+        "11,1": [
+            2,
+            0
+        ],
+        "11,5": [
+            6,
+            4
+        ],
+        "11,8": [
+            12,
+            4
+        ],
+        "11,9": [
+            13,
+            5,
+            10,
+            8
+        ],
+        "11,10": [
+            14,
+            6
+        ],
+        "11,11": [
+            15,
+            7
+        ],
+        "11,13": [
+            14,
+            12
+        ],
+        "11,17": [
+            18,
+            16
+        ],
+        "11,24": [
+            28,
+            20
+        ],
+        "11,25": [
+            29,
+            21
+        ],
+        "11,26": [
+            30,
+            22
+        ],
+        "11,27": [
+            31,
+            23
+        ],
+        "11,41": [
+            42,
+            40
+        ],
+        "11,45": [
+            46,
+            44
+        ],
+        "11,52": [
+            56,
+            48
+        ],
+        "11,53": [
+            57,
+            49
+        ],
+        "11,54": [
+            58,
+            50
+        ],
+        "11,55": [
+            59,
+            51
+        ],
+        "12,22": [
+            23
+        ],
+        "12,26": [
+            27
+        ],
+        "12,30": [
+            31
+        ],
+        "12,34": [
+            35
+        ],
+        "12,38": [
+            39
+        ],
+        "12,50": [
+            51
+        ],
+        "12,54": [
+            55
+        ],
+        "12,58": [
+            59
+        ],
+        "12,62": [
+            63
+        ],
+        "12,20": [
+            23
+        ],
+        "12,24": [
+            27
+        ],
+        "12,28": [
+            31
+        ],
+        "12,32": [
+            35
+        ],
+        "12,36": [
+            39
+        ],
+        "12,48": [
+            51
+        ],
+        "12,52": [
+            55
+        ],
+        "12,56": [
+            59
+        ],
+        "12,60": [
+            63
+        ],
+        "13,23": [
+            22,
+            20
+        ],
+        "13,27": [
+            26,
+            24
+        ],
+        "13,31": [
+            30,
+            28
+        ],
+        "13,35": [
+            34,
+            32
+        ],
+        "13,39": [
+            38,
+            36
+        ],
+        "13,51": [
+            50,
+            48
+        ],
+        "13,55": [
+            54,
+            52
+        ],
+        "13,59": [
+            58,
+            56
+        ],
+        "13,63": [
+            62,
+            60
+        ],
+        "14,20": [
+            21
+        ],
+        "14,24": [
+            25
+        ],
+        "14,28": [
+            29
+        ],
+        "14,32": [
+            33
+        ],
+        "14,36": [
+            37
+        ],
+        "14,40": [
+            44
+        ],
+        "14,41": [
+            45
+        ],
+        "14,42": [
+            46
+        ],
+        "14,43": [
+            47
+        ],
+        "14,48": [
+            49
+        ],
+        "14,52": [
+            53
+        ],
+        "14,56": [
+            57
+        ],
+        "14,60": [
+            61
+        ],
+        "14,22": [
+            21
+        ],
+        "14,26": [
+            25
+        ],
+        "14,30": [
+            29
+        ],
+        "14,34": [
+            33
+        ],
+        "14,38": [
+            37
+        ],
+        "14,50": [
+            49
+        ],
+        "14,54": [
+            53
+        ],
+        "14,58": [
+            57
+        ],
+        "14,62": [
+            61
+        ],
+        "15,21": [
+            20
+        ],
+        "15,25": [
+            24
+        ],
+        "15,29": [
+            28
+        ],
+        "15,33": [
+            32
+        ],
+        "15,37": [
+            36
+        ],
+        "15,44": [
+            40
+        ],
+        "15,45": [
+            41
+        ],
+        "15,46": [
+            42
+        ],
+        "15,47": [
+            43
+        ],
+        "15,49": [
+            48
+        ],
+        "15,53": [
+            52
+        ],
+        "15,57": [
+            56
+        ],
+        "15,61": [
+            60
+        ],
+        "16,20": [
+            23
+        ],
+        "16,24": [
+            27
+        ],
+        "16,28": [
+            31
+        ],
+        "16,32": [
+            35
+        ],
+        "16,36": [
+            39
+        ],
+        "16,48": [
+            51
+        ],
+        "16,52": [
+            55
+        ],
+        "16,56": [
+            59
+        ],
+        "16,60": [
+            63
+        ],
+        "16,22": [
+            23
+        ],
+        "16,26": [
+            27
+        ],
+        "16,30": [
+            31
+        ],
+        "16,34": [
+            35
+        ],
+        "16,38": [
+            39
+        ],
+        "16,50": [
+            51
+        ],
+        "16,54": [
+            55
+        ],
+        "16,58": [
+            59
+        ],
+        "16,62": [
+            63
+        ],
+        "17,23": [
+            22
+        ],
+        "17,27": [
+            26
+        ],
+        "17,31": [
+            30
+        ],
+        "17,35": [
+            34
+        ],
+        "17,39": [
+            38
+        ],
+        "17,51": [
+            50
+        ],
+        "17,55": [
+            54
+        ],
+        "17,59": [
+            58
+        ],
+        "17,63": [
+            62
+        ],
+        "18,4": [
+            9
+        ],
+        "18,6": [
+            11
+        ],
+        "18,12": [
+            17
+        ],
+        "18,14": [
+            19
+        ],
+        "18,20": [
+            25
+        ],
+        "18,22": [
+            27
+        ],
+        "18,28": [
+            33
+        ],
+        "18,30": [
+            35
+        ],
+        "18,40": [
+            45
+        ],
+        "18,42": [
+            47
+        ],
+        "18,48": [
+            53
+        ],
+        "18,50": [
+            55
+        ],
+        "18,56": [
+            61
+        ],
+        "18,58": [
+            63
+        ],
+        "19,9": [
+            4
+        ],
+        "19,11": [
+            6
+        ],
+        "19,17": [
+            12
+        ],
+        "19,19": [
+            14
+        ],
+        "19,25": [
+            20
+        ],
+        "19,27": [
+            22
+        ],
+        "19,33": [
+            28
+        ],
+        "19,35": [
+            30
+        ],
+        "19,45": [
+            40
+        ],
+        "19,47": [
+            42
+        ],
+        "19,53": [
+            48
+        ],
+        "19,55": [
+            50
+        ],
+        "19,61": [
+            56
+        ],
+        "19,63": [
+            58
+        ],
+        "20,0": [
+            1
+        ],
+        "20,4": [
+            8,
+            5
+        ],
+        "20,5": [
+            9
+        ],
+        "20,6": [
+            10,
+            7
+        ],
+        "20,7": [
+            11
+        ],
+        "20,8": [
+            9
+        ],
+        "20,12": [
+            13,
+            16
+        ],
+        "20,16": [
+            17
+        ],
+        "20,20": [
+            24,
+            21
+        ],
+        "20,21": [
+            25
+        ],
+        "20,22": [
+            26,
+            23
+        ],
+        "20,23": [
+            27
+        ],
+        "20,40": [
+            41,
+            44
+        ],
+        "20,44": [
+            45
+        ],
+        "20,48": [
+            52,
+            49
+        ],
+        "20,49": [
+            53
+        ],
+        "20,50": [
+            54,
+            51
+        ],
+        "20,51": [
+            55
+        ],
+        "20,26": [
+            27
+        ],
+        "20,30": [
+            31,
+            34
+        ],
+        "20,34": [
+            35
+        ],
+        "20,38": [
+            39
+        ],
+        "20,54": [
+            55
+        ],
+        "20,58": [
+            59,
+            62
+        ],
+        "20,62": [
+            63
+        ],
+        "20,2": [
+            3
+        ],
+        "20,10": [
+            11
+        ],
+        "20,13": [
+            17
+        ],
+        "20,14": [
+            18,
+            15
+        ],
+        "20,15": [
+            19
+        ],
+        "20,18": [
+            19
+        ],
+        "20,28": [
+            32,
+            29
+        ],
+        "20,29": [
+            33
+        ],
+        "20,31": [
+            35
+        ],
+        "20,42": [
+            43,
+            46
+        ],
+        "20,46": [
+            47
+        ],
+        "20,56": [
+            60,
+            57
+        ],
+        "20,57": [
+            61
+        ],
+        "20,59": [
+            63
+        ],
+        "20,24": [
+            25
+        ],
+        "20,32": [
+            33
+        ],
+        "20,36": [
+            37
+        ],
+        "20,41": [
+            45
+        ],
+        "20,43": [
+            47
+        ],
+        "20,52": [
+            53
+        ],
+        "20,60": [
+            61
+        ],
+        "21,1": [
+            2,
+            0
+        ],
+        "21,3": [
+            2,
+            0
+        ],
+        "21,5": [
+            6,
+            4
+        ],
+        "21,7": [
+            6,
+            4
+        ],
+        "21,8": [
+            12,
+            4
+        ],
+        "21,9": [
+            13,
+            5,
+            10,
+            8
+        ],
+        "21,10": [
+            14,
+            6
+        ],
+        "21,11": [
+            15,
+            7,
+            10,
+            8
+        ],
+        "21,13": [
+            14,
+            12
+        ],
+        "21,15": [
+            14,
+            12
+        ],
+        "21,16": [
+            12,
+            4
+        ],
+        "21,17": [
+            13,
+            5,
+            18,
+            16
+        ],
+        "21,18": [
+            14,
+            6
+        ],
+        "21,19": [
+            15,
+            7,
+            18,
+            16
+        ],
+        "21,21": [
+            22,
+            20
+        ],
+        "21,23": [
+            22,
+            20
+        ],
+        "21,24": [
+            28,
+            20
+        ],
+        "21,25": [
+            29,
+            21,
+            26,
+            24
+        ],
+        "21,26": [
+            30,
+            22
+        ],
+        "21,27": [
+            31,
+            23,
+            26,
+            24
+        ],
+        "21,29": [
+            30,
+            28
+        ],
+        "21,31": [
+            30,
+            28
+        ],
+        "21,32": [
+            28,
+            20
+        ],
+        "21,33": [
+            29,
+            21,
+            34,
+            32
+        ],
+        "21,34": [
+            30,
+            22
+        ],
+        "21,35": [
+            31,
+            23,
+            34,
+            32
+        ],
+        "21,37": [
+            38,
+            36
+        ],
+        "21,39": [
+            38,
+            36
+        ],
+        "21,41": [
+            42,
+            40
+        ],
+        "21,43": [
+            42,
+            40
+        ],
+        "21,44": [
+            40
+        ],
+        "21,45": [
+            41,
+            46,
+            44
+        ],
+        "21,46": [
+            42
+        ],
+        "21,47": [
+            43,
+            46,
+            44
+        ],
+        "21,49": [
+            50,
+            48
+        ],
+        "21,51": [
+            50,
+            48
+        ],
+        "21,52": [
+            56,
+            48
+        ],
+        "21,53": [
+            57,
+            49,
+            54,
+            52
+        ],
+        "21,54": [
+            58,
+            50
+        ],
+        "21,55": [
+            59,
+            51,
+            54,
+            52
+        ],
+        "21,57": [
+            58,
+            56
+        ],
+        "21,59": [
+            58,
+            56
+        ],
+        "21,60": [
+            56,
+            48
+        ],
+        "21,61": [
+            57,
+            49,
+            62,
+            60
+        ],
+        "21,62": [
+            58,
+            50
+        ],
+        "21,63": [
+            59,
+            51,
+            62,
+            60
+        ],
+        "22,4": [
+            9
+        ],
+        "22,6": [
+            11
+        ],
+        "22,12": [
+            17
+        ],
+        "22,14": [
+            19
+        ],
+        "22,20": [
+            25
+        ],
+        "22,22": [
+            27
+        ],
+        "22,28": [
+            33
+        ],
+        "22,30": [
+            35
+        ],
+        "22,40": [
+            45
+        ],
+        "22,42": [
+            47
+        ],
+        "22,48": [
+            53
+        ],
+        "22,50": [
+            55
+        ],
+        "22,56": [
+            61
+        ],
+        "22,58": [
+            63
+        ],
+        "23,9": [
+            4
+        ],
+        "23,11": [
+            6
+        ],
+        "23,17": [
+            12
+        ],
+        "23,19": [
+            14
+        ],
+        "23,25": [
+            20
+        ],
+        "23,27": [
+            22
+        ],
+        "23,33": [
+            28
+        ],
+        "23,35": [
+            30
+        ],
+        "23,45": [
+            40
+        ],
+        "23,47": [
+            42
+        ],
+        "23,53": [
+            48
+        ],
+        "23,55": [
+            50
+        ],
+        "23,61": [
+            56
+        ],
+        "23,63": [
+            58
+        ],
+        "24,22": [
+            21
+        ],
+        "24,26": [
+            25
+        ],
+        "24,30": [
+            29
+        ],
+        "24,34": [
+            33
+        ],
+        "24,38": [
+            37
+        ],
+        "24,50": [
+            49
+        ],
+        "24,54": [
+            53
+        ],
+        "24,58": [
+            57
+        ],
+        "24,62": [
+            61
+        ],
+        "24,20": [
+            21
+        ],
+        "24,24": [
+            25
+        ],
+        "24,28": [
+            29
+        ],
+        "24,32": [
+            33
+        ],
+        "24,36": [
+            37
+        ],
+        "24,40": [
+            44
+        ],
+        "24,41": [
+            45
+        ],
+        "24,42": [
+            46
+        ],
+        "24,43": [
+            47
+        ],
+        "24,48": [
+            49
+        ],
+        "24,52": [
+            53
+        ],
+        "24,56": [
+            57
+        ],
+        "24,60": [
+            61
+        ],
+        "25,21": [
+            22
+        ],
+        "25,25": [
+            26
+        ],
+        "25,29": [
+            30
+        ],
+        "25,33": [
+            34
+        ],
+        "25,37": [
+            38
+        ],
+        "25,49": [
+            50
+        ],
+        "25,53": [
+            54
+        ],
+        "25,57": [
+            58
+        ],
+        "25,61": [
+            62
+        ]
+    },
+    "search_for_empty": [
+        "empt"
+    ],
+    "search_for_full": [
+        "full"
+    ],
+    "z_requirements_config_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_config": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ],
+    "z_requirements_driver_loc": [
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ]
+    ]
+}
